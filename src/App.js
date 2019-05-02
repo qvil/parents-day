@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Route path="/" exact component={Home} />
         <Route path="/:parent/:child" component={Carnation} />
       </Router>
