@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "161bbd0755339defc1037e4f400a9a8c",
+    "revision": "b2f23a19d7bd5b06130173c1f9331770",
     "url": "/parents-day/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/parents-day/static/js/2.b88eb215.chunk.js"
   },
   {
-    "revision": "cf9c1793ad6c470a6e4c",
-    "url": "/parents-day/static/js/main.9efc73af.chunk.js"
+    "revision": "cd5f84276815744ea33b",
+    "url": "/parents-day/static/js/main.60d559a7.chunk.js"
   },
   {
     "revision": "f1e44128a82f5928b5b2",

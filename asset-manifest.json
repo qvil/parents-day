@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/parents-day/static/js/main.9efc73af.chunk.js",
-    "main.js.map": "/parents-day/static/js/main.9efc73af.chunk.js.map",
+    "main.js": "/parents-day/static/js/main.60d559a7.chunk.js",
+    "main.js.map": "/parents-day/static/js/main.60d559a7.chunk.js.map",
     "runtime~main.js": "/parents-day/static/js/runtime~main.af11c7c4.js",
     "runtime~main.js.map": "/parents-day/static/js/runtime~main.af11c7c4.js.map",
     "static/js/2.b88eb215.chunk.js": "/parents-day/static/js/2.b88eb215.chunk.js",
     "static/js/2.b88eb215.chunk.js.map": "/parents-day/static/js/2.b88eb215.chunk.js.map",
     "index.html": "/parents-day/index.html",
-    "precache-manifest.5becd500c334a662bd9aaae136ee01a2.js": "/parents-day/precache-manifest.5becd500c334a662bd9aaae136ee01a2.js",
+    "precache-manifest.3062005c898d75aa21a03e8e714bf7d5.js": "/parents-day/precache-manifest.3062005c898d75aa21a03e8e714bf7d5.js",
     "service-worker.js": "/parents-day/service-worker.js"
   }
 }
