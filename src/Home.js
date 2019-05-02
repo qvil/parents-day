@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { CardStyle, RaisedCardStyle } from "./styles/mixin";
 
@@ -7,10 +8,10 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 8px;
+  margin: 0 8px;
 `;
 
-const Card = styled.div`
+const CardForm = styled.form`
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -32,31 +33,39 @@ const Input = styled.input`
   margin-top: 8px;
 `;
 
-const Button = styled.button`
+// const Button = styled.button`
+const Button = styled(Link)`
   padding: 8px;
+  border-radius: 4px;
   margin-top: 16px;
   color: white;
   background: rgba(52, 152, 219, 1);
+  text-decoration: none;
+  text-align: center;
   &:hover {
     background: rgba(52, 152, 219, 0.8);
   }
 `;
 
 function Home() {
-  const [state, setState] = useState();
-  console.log("TCL: Home -> state", state);
+  const [state, setState] = useState({
+    parentName: "",
+    myName: "",
+    message: ""
+  });
 
   const handleChange = name => event => {
     setState({ ...state, [name]: event.target.value });
   };
 
-  const handleClick = () => {
-    console.log(state);
+  const handleSubmit = event => {
+    console.log("TCL: Home -> event", event);
+    // event.preventDefault();
   };
 
   return (
     <Container>
-      <Card>
+      <CardForm onSubmit={handleSubmit}>
         <h2>부모님께 카네이션을 선물하세요!</h2>
         <Input
           type="text"
@@ -73,8 +82,13 @@ function Home() {
           placeholder="메시지(기본 : 부모님 은혜에 감사합니다.)"
           onChange={handleChange("message")}
         />
-        <Button onClick={handleClick}>보내기</Button>
-      </Card>
+        <Button
+          onClick={handleSubmit}
+          to={`${state.parentName}/${state.myName}`}
+        >
+          보내기
+        </Button>
+      </CardForm>
     </Container>
   );
 }
