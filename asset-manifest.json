@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/parents-day/static/js/main.15032e05.chunk.js",
-    "main.js.map": "/parents-day/static/js/main.15032e05.chunk.js.map",
+    "main.js": "/parents-day/static/js/main.9efc73af.chunk.js",
+    "main.js.map": "/parents-day/static/js/main.9efc73af.chunk.js.map",
     "runtime~main.js": "/parents-day/static/js/runtime~main.af11c7c4.js",
     "runtime~main.js.map": "/parents-day/static/js/runtime~main.af11c7c4.js.map",
-    "static/js/2.d60cfacc.chunk.js": "/parents-day/static/js/2.d60cfacc.chunk.js",
-    "static/js/2.d60cfacc.chunk.js.map": "/parents-day/static/js/2.d60cfacc.chunk.js.map",
+    "static/js/2.b88eb215.chunk.js": "/parents-day/static/js/2.b88eb215.chunk.js",
+    "static/js/2.b88eb215.chunk.js.map": "/parents-day/static/js/2.b88eb215.chunk.js.map",
     "index.html": "/parents-day/index.html",
-    "precache-manifest.f4215d25f0fa3a6c477d00081cd95597.js": "/parents-day/precache-manifest.f4215d25f0fa3a6c477d00081cd95597.js",
+    "precache-manifest.5becd500c334a662bd9aaae136ee01a2.js": "/parents-day/precache-manifest.5becd500c334a662bd9aaae136ee01a2.js",
     "service-worker.js": "/parents-day/service-worker.js"
   }
 }
