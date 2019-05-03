@@ -18,3 +18,17 @@ export const RaisedCardStyle = css`
   max-width: 24rem;
   transition: 0.3s;
 `;
+
+export const ButtonStyle = css`
+  padding: 8px;
+  border-radius: 4px;
+  margin-top: 16px;
+  color: white;
+  background: ${({ color }) => (color ? color : "rgba(52, 152, 219, 1)")};
+  font-size: 14px;
+  text-decoration: none;
+  text-align: center;
+  &:hover {
+    opacity: 0.8;
+  }
+`;

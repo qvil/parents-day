@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CardForm, Input, Button } from "./components";
+import { CardForm, Input, LinkButton } from "./components";
 
 function Home() {
   const [state, setState] = useState({
@@ -35,9 +35,12 @@ function Home() {
         placeholder="메시지(기본 : 부모님 은혜에 감사합니다.)"
         onChange={handleChange("message")}
       />
-      <Button onClick={handleSubmit} to={`${state.parentName}/${state.myName}`}>
+      <LinkButton
+        onClick={handleSubmit}
+        to={`${state.parentName}/${state.myName}`}
+      >
         보내기
-      </Button>
+      </LinkButton>
     </CardForm>
   );
 }

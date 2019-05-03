@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { CardStyle, RaisedCardStyle } from "../styles/mixin";
+import { CardStyle, RaisedCardStyle, ButtonStyle } from "../styles/mixin";
 
 export const CardForm = styled.form`
   flex: 1;
@@ -24,16 +24,16 @@ export const Input = styled.input`
   margin-top: 8px;
 `;
 
-// const Button = styled.button`
-export const Button = styled(Link)`
-  padding: 8px;
-  border-radius: 4px;
-  margin-top: 16px;
-  color: white;
-  background: rgba(52, 152, 219, 1);
-  text-decoration: none;
-  text-align: center;
-  &:hover {
-    background: rgba(52, 152, 219, 0.8);
-  }
+export const Button = styled.button`
+  ${ButtonStyle};
+`;
+
+export const LinkButton = styled(Link)`
+  ${ButtonStyle};
+`;
+
+export const PhotoFrame = styled.img`
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 5%;
 `;
