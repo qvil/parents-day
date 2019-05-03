@@ -7,6 +7,7 @@ export const CardStyle = css`
   border-radius: 4px;
   padding: 16px;
   max-width: 24rem;
+  transition: 0.3s;
 `;
 
 export const RaisedCardStyle = css`
@@ -15,4 +16,5 @@ export const RaisedCardStyle = css`
   border-radius: 4px;
   padding: 16px;
   max-width: 24rem;
+  transition: 0.3s;
 `;
