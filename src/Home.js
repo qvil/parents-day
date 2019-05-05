@@ -23,16 +23,19 @@ function Home() {
       <Input
         type="text"
         placeholder="부모님 성함"
+        value={state.parentName}
         onChange={handleChange("parentName")}
       />
       <Input
         type="text"
         placeholder="내 이름"
+        value={state.myName}
         onChange={handleChange("myName")}
       />
       <Input
         type="text"
         placeholder="메시지(기본 : 부모님 은혜에 감사합니다.)"
+        value={state.message}
         onChange={handleChange("message")}
       />
       <LinkButton
