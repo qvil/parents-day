@@ -13,7 +13,8 @@ function App() {
         <Router basename={process.env.PUBLIC_URL}>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/:parent/:child" component={Carnation} />
+            <Route path="/:parent/:child" exact component={Carnation} />
+            <Route path="/:parent/:child/:message" component={Carnation} />
             <Route component={Home} />
           </Switch>
         </Router>

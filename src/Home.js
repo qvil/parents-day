@@ -3,7 +3,6 @@ import { withRouter } from "react-router-dom";
 import { CardForm, Input, Button } from "./components";
 
 function Home(props) {
-  console.log("TCL: Home -> props", props);
   const [state, setState] = useState({
     parentName: "",
     myName: "",
@@ -29,16 +28,12 @@ function Home(props) {
       alert("내 이름을 입력하세요.");
       return;
     }
-    if (state.message.trim() === "") {
-      alert("메시지를 입력하세요.");
-      return;
-    }
+    // if (state.message.trim() === "") {
+    //   alert("메시지를 입력하세요.");
+    //   return;
+    // }
 
-    props.history.push(`${state.parentName}/${state.myName}?${state.message}`);
-    // props.history.push({
-    //   pathname: `${state.parentName}/${state.myName}?name="qvil`,
-    //   search: "?name=qvil"
-    // });
+    props.history.push(`${state.parentName}/${state.myName}/${state.message}`);
   };
 
   return (
