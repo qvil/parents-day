@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/parents-day/precache-manifest.c2fe76ebdece2a6562d117e8a2173c4a.js"
+  "/parents-day/precache-manifest.841ede28f1aac65853b786badd9d3fa8.js"
 );
 
 self.addEventListener('message', (event) => {
