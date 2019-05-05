@@ -34,7 +34,11 @@ function Home(props) {
       return;
     }
 
-    props.history.push(`${state.parentName}/${state.myName}`);
+    props.history.push(`${state.parentName}/${state.myName}?${state.message}`);
+    // props.history.push({
+    //   pathname: `${state.parentName}/${state.myName}?name="qvil`,
+    //   search: "?name=qvil"
+    // });
   };
 
   return (
@@ -59,7 +63,7 @@ function Home(props) {
         value={state.message}
         onChange={handleChange("message")}
       />
-      <Button onClick={handleSubmit} to={`${state.parentName}/${state.myName}`}>
+      <Button type="submit" onClick={handleSubmit}>
         보내기
       </Button>
     </CardForm>
