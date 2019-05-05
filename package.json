@@ -1,6 +1,5 @@
 {
   "name": "parents-day",
-  "homepage": "https://qvil.github.io/parents-day",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
