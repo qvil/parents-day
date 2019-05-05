@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import { css, keyframes } from "styled-components";
 
 export const CardStyle = css`
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
@@ -30,5 +30,14 @@ export const ButtonStyle = css`
   text-align: center;
   &:hover {
     opacity: 0.8;
+  }
+`;
+
+export const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 `;

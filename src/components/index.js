@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { CardStyle, RaisedCardStyle, ButtonStyle } from "../styles/mixin";
+import {
+  CardStyle,
+  RaisedCardStyle,
+  ButtonStyle,
+  fadeIn
+} from "../styles/mixin";
 
 export const CardForm = styled.form`
   flex: 1;
@@ -13,6 +18,7 @@ export const CardForm = styled.form`
   &:focus {
     ${RaisedCardStyle};
   }
+  animation: ${fadeIn} 1s linear;
 `;
 
 export const Input = styled.input`
