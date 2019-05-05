@@ -9,7 +9,8 @@ export const CardForm = styled.form`
   background: skyblue;
   max-width: 800px;
   ${CardStyle};
-  &:hover {
+  &:hover,
+  &:focus {
     ${RaisedCardStyle};
   }
 `;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { CardForm, Input, LinkButton } from "./components";
 
 function Home() {
@@ -7,6 +7,11 @@ function Home() {
     myName: "",
     message: ""
   });
+  const parentNameEl = useRef(null);
+
+  useEffect(() => {
+    parentNameEl.current.focus();
+  }, []);
 
   const handleChange = name => event => {
     setState({ ...state, [name]: event.target.value });
@@ -21,6 +26,7 @@ function Home() {
     <CardForm onSubmit={handleSubmit}>
       <h2>부모님께 카네이션을 선물하세요!</h2>
       <Input
+        ref={parentNameEl}
         type="text"
         placeholder="부모님 성함"
         value={state.parentName}
