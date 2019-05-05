@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import { CardForm, Input, LinkButton } from "./components";
+import { withRouter } from "react-router-dom";
+import { CardForm, Input, Button } from "./components";
 
-function Home() {
+function Home(props) {
+  console.log("TCL: Home -> props", props);
   const [state, setState] = useState({
     parentName: "",
     myName: "",
@@ -18,8 +20,21 @@ function Home() {
   };
 
   const handleSubmit = event => {
-    console.log("TCL: Home -> event", event);
-    // event.preventDefault();
+    event.preventDefault();
+
+    if (state.parentName.trim() === "") {
+      alert("부모님 성함을 입력하세요.");
+      return;
+    } else if (state.myName.trim() === "") {
+      alert("내 이름을 입력하세요.");
+      return;
+    }
+    if (state.message.trim() === "") {
+      alert("메시지를 입력하세요.");
+      return;
+    }
+
+    props.history.push(`${state.parentName}/${state.myName}`);
   };
 
   return (
@@ -44,14 +59,11 @@ function Home() {
         value={state.message}
         onChange={handleChange("message")}
       />
-      <LinkButton
-        onClick={handleSubmit}
-        to={`${state.parentName}/${state.myName}`}
-      >
+      <Button onClick={handleSubmit} to={`${state.parentName}/${state.myName}`}>
         보내기
-      </LinkButton>
+      </Button>
     </CardForm>
   );
 }
 
-export default Home;
+export default withRouter(Home);

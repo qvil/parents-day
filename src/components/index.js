@@ -18,7 +18,7 @@ export const CardForm = styled.form`
   &:focus {
     ${RaisedCardStyle};
   }
-  animation: ${fadeIn} 1s linear;
+  animation: ${fadeIn} 0.5s linear;
 `;
 
 export const Input = styled.input`
