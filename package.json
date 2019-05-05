@@ -18,7 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serve": "npx serve -d build -p port 80"
+    "serve": "npx serve -d build -p 80"
   },
   "eslintConfig": {
     "extends": "react-app"
