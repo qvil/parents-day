@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import { CardForm, Button, LinkButton, PhotoFrame, Title } from "./components";
 
@@ -10,12 +10,27 @@ const FromTo = styled.p`
   font-family: "Gamja Flower", cursive;
 `;
 
+const ClipBoard = styled.input`
+  z-index: -9;
+  position: fixed;
+  color: transparent;
+  background: transparent;
+  border: none;
+`;
+
 const Carnation = props => {
   const {
     parent,
     child,
     message = "부모님 은혜에 감사합니다."
   } = props.match.params;
+  const shareEl = useRef(null);
+
+  const handleShare = () => {
+    shareEl.current.select();
+    document.execCommand("copy");
+    alert("URL이 클립보드에 복사되었습니다!");
+  };
 
   return (
     <CardForm>
@@ -25,7 +40,15 @@ const Carnation = props => {
       />
       <Title>{message}</Title>
       <FromTo>{`부모님(${parent})께 자식(${child}) 드림`}</FromTo>
-      <Button>공유하기</Button>
+      <ClipBoard
+        ref={shareEl}
+        type="text"
+        value={window.location.href}
+        onChange={() => {}}
+      />
+      <Button type="button" onClick={handleShare}>
+        공유하기
+      </Button>
       <LinkButton to="/" color="rgba(15, 185, 177, 1)">
         다시 보내기
       </LinkButton>

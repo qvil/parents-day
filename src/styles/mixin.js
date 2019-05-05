@@ -30,6 +30,7 @@ export const ButtonStyle = css`
   text-align: center;
   &:hover {
     opacity: 0.8;
+    cursor: pointer;
   }
 `;
 

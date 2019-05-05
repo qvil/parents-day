@@ -48,6 +48,6 @@ export const LinkButton = styled(Link)`
 
 export const PhotoFrame = styled.img`
   max-width: 100%;
-  max-height: 400px;
+  max-height: 300px;
   border-radius: 5%;
 `;
