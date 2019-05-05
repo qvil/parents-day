@@ -7,6 +7,13 @@ import {
   fadeIn
 } from "../styles/mixin";
 
+export const Title = styled.h2`
+  font-weight: normal;
+  text-align: center;
+  font-family: "Nanum Pen Script", cursive;
+  /* font-family: "Gamja Flower", cursive; */
+`;
+
 export const CardForm = styled.form`
   flex: 1;
   display: flex;

@@ -1,6 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
+import styled from "styled-components";
 import { withRouter } from "react-router-dom";
-import { CardForm, Input, Button } from "./components";
+import { CardForm, Input, Button, Title } from "./components";
+import FlowerImg from "./img/icons8-flower-vase-48.png";
+
+const Row = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 function Home(props) {
   const [state, setState] = useState({
@@ -38,7 +45,10 @@ function Home(props) {
 
   return (
     <CardForm onSubmit={handleSubmit}>
-      <h2>부모님께 카네이션을 선물하세요!</h2>
+      <Row>
+        <Title>부모님께 카네이션을 선물하세요!</Title>
+        <img src={FlowerImg} alt="FlowerImg" width="48" height="48" />
+      </Row>
       <Input
         ref={parentNameEl}
         type="text"

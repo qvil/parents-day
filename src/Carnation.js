@@ -1,16 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { CardForm, Button, LinkButton, PhotoFrame } from "./components";
+import { CardForm, Button, LinkButton, PhotoFrame, Title } from "./components";
 
 const randomNumber = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
-const Message = styled.h2`
-  text-align: center;
-`;
-
 const FromTo = styled.p`
   text-align: right;
+  font-family: "Gamja Flower", cursive;
 `;
 
 const Carnation = props => {
@@ -26,7 +23,7 @@ const Carnation = props => {
         src={require(`./img/carnation${randomNumber(1, 6)}.jpg`)}
         alt="carnation"
       />
-      <Message>{message}</Message>
+      <Title>{message}</Title>
       <FromTo>{`부모님(${parent})께 자식(${child}) 드림`}</FromTo>
       <Button>공유하기</Button>
       <LinkButton to="/" color="rgba(15, 185, 177, 1)">
