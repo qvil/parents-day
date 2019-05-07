@@ -34,7 +34,7 @@ export const Input = styled.input`
   padding: 8px;
   border-bottom: 1px solid rgba(52, 152, 219, 1);
   border-radius: 0%;
-  width: 100%;
+  flex: 1;
   box-sizing: border-box;
   margin-top: 8px;
 `;
@@ -51,4 +51,8 @@ export const PhotoFrame = styled.img`
   max-width: 100%;
   max-height: 300px;
   border-radius: 5%;
+`;
+
+export const StyledSpan = styled.span`
+  font-family: "Gamja Flower", cursive;
 `;

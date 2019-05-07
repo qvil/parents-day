@@ -1,6 +1,15 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
-import { CardForm, Button, LinkButton, PhotoFrame, Title } from "./components";
+import {
+  CardForm,
+  LinkButton,
+  PhotoFrame,
+  Title,
+  Input,
+  StyledSpan
+} from "./components";
+import { init, sendLink } from "./lib/kakao";
+import CopyIcon from "./img/icons8-copy-link-48.png";
 
 const randomNumber = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
@@ -10,12 +19,28 @@ const FromTo = styled.p`
   font-family: "Gamja Flower", cursive;
 `;
 
-const ClipBoard = styled.input`
-  z-index: -9;
-  position: fixed;
-  color: transparent;
-  background: transparent;
-  border: none;
+const ClipBoard = styled(Input)`
+  margin: 0 8px;
+`;
+
+const ShareDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ImgButton = styled.img`
+  width: 48px;
+  height: 48px;
+  padding: 8px;
+  box-sizing: border-box;
+  &:hover {
+    cursor: pointer;
+    background: rgba(52, 152, 219, 0.3);
+    /* border: 1px solid rgba(52, 152, 219, 1); */
+    border-radius: 4px;
+    transition: 1s;
+  }
 `;
 
 const Carnation = props => {
@@ -25,6 +50,10 @@ const Carnation = props => {
     message = "부모님 은혜에 감사합니다."
   } = props.match.params;
   const shareEl = useRef(null);
+
+  useEffect(() => {
+    init(process.env.REACT_APP_KAKAO_JAVASCRIPT_KEY);
+  }, []);
 
   const handleShare = () => {
     shareEl.current.select();
@@ -40,15 +69,23 @@ const Carnation = props => {
       />
       <Title>{message}</Title>
       <FromTo>{`부모님(${parent})께 자식(${child}) 드림`}</FromTo>
-      <ClipBoard
-        ref={shareEl}
-        type="text"
-        value={window.location.href}
-        onChange={() => {}}
-      />
-      <Button type="button" onClick={handleShare}>
-        공유하기
-      </Button>
+
+      <ShareDiv>
+        <StyledSpan>공유하기</StyledSpan>
+        <ClipBoard
+          ref={shareEl}
+          type="text"
+          value={window.location.href}
+          onChange={() => {}}
+        />
+        <ImgButton
+          src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+          alt="kakaolink_btn_medium.png"
+          onClick={sendLink(window.location.href)}
+        />
+        <ImgButton src={CopyIcon} alt="CopyIcon" onClick={handleShare} />
+      </ShareDiv>
+
       <LinkButton to="/" color="rgba(15, 185, 177, 1)">
         다시 보내기
       </LinkButton>
