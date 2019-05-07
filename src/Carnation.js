@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import {
   CardForm,
@@ -10,6 +10,7 @@ import {
 } from "./components";
 import { sendLink } from "./lib/kakao";
 import CopyIcon from "./img/icons8-copy-link-48.png";
+import ClipboardJS from "clipboard";
 
 const randomNumber = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
@@ -37,7 +38,6 @@ const ImgButton = styled.img`
   &:hover {
     cursor: pointer;
     background: rgba(52, 152, 219, 0.3);
-    /* border: 1px solid rgba(52, 152, 219, 1); */
     border-radius: 4px;
     transition: 1s;
   }
@@ -51,11 +51,21 @@ const Carnation = props => {
   } = props.match.params;
   const shareEl = useRef(null);
 
-  const handleShare = () => {
-    shareEl.current.select();
-    document.execCommand("copy");
-    alert("URL이 클립보드에 복사되었습니다!");
-  };
+  useEffect(() => {
+    const clipboard = new ClipboardJS("#shareButton");
+    clipboard.on("success", e => {
+      alert("URL이 클립보드에 복사되었습니다!");
+    });
+    clipboard.on("error", e => {
+      alert("URL 복사에 실패했습니다 :(");
+      console.log("TCL: e", e);
+    });
+  }, []);
+
+  // const handleShare = () => {
+  // shareEl.current.select();
+  // document.execCommand("copy");
+  // };
 
   return (
     <CardForm>
@@ -69,6 +79,7 @@ const Carnation = props => {
       <ShareDiv>
         <StyledSpan>공유하기</StyledSpan>
         <ClipBoard
+          id="clipboard"
           ref={shareEl}
           type="text"
           value={window.location.href}
@@ -85,7 +96,13 @@ const Carnation = props => {
             message
           })}
         />
-        <ImgButton src={CopyIcon} alt="CopyIcon" onClick={handleShare} />
+        <ImgButton
+          id="shareButton"
+          src={CopyIcon}
+          alt="CopyIcon"
+          // onClick={handleShare}
+          data-clipboard-target="#clipboard"
+        />
       </ShareDiv>
 
       <LinkButton to="/" color="rgba(15, 185, 177, 1)">
