@@ -59,20 +59,20 @@ function Home(props) {
       <Input
         ref={parentNameEl}
         type="text"
-        placeholder="부모님 성함"
+        placeholder="부모님 성함 혹은 호칭(예: 엄마)"
         value={state.parentName}
         onChange={handleChange("parentName")}
       />
       <Input
         ref={myNameEl}
         type="text"
-        placeholder="내 이름"
+        placeholder="내 이름 혹은 호칭(예: 아들)"
         value={state.myName}
         onChange={handleChange("myName")}
       />
       <Input
         type="text"
-        placeholder="메시지(기본 : 부모님 은혜에 감사합니다.)"
+        placeholder="메시지(기본: 부모님 은혜에 감사합니다.)"
         value={state.message}
         onChange={handleChange("message")}
       />
