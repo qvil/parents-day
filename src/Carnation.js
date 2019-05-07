@@ -73,11 +73,17 @@ const Carnation = props => {
           type="text"
           value={window.location.href}
           onChange={() => {}}
+          contenteditable="true"
         />
         <ImgButton
           src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
           alt="kakaolink_btn_medium.png"
-          onClick={sendLink(window.location.href)}
+          onClick={sendLink({
+            targetLink: window.location.href,
+            parent,
+            child,
+            message
+          })}
         />
         <ImgButton src={CopyIcon} alt="CopyIcon" onClick={handleShare} />
       </ShareDiv>

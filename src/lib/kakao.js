@@ -1,14 +1,19 @@
 export const init = (key = process.env.REACT_APP_KAKAO_APP_KEY) => {
   window.Kakao.init(key);
 };
-export const sendLink = targetLink => () => {
+export const sendLink = ({
+  targetLink,
+  parent = "부모",
+  child = "자식",
+  message = "부모님 은혜에 감사합니다."
+}) => () => {
   const serviceLink = "http://parentsday.cf";
 
   window.Kakao.Link.sendDefault({
     objectType: "feed",
     content: {
-      title: "카네이션카드 - 어버이날 감사한 부모님께 카네이션 선물하기",
-      description: "어버이날 감사한 부모님께 카네이션을 선물해보세요!",
+      title: message,
+      description: `${parent}님에게 ${child}님으로 부터 카네이션 카드가 도착했어요!`,
       imageUrl: `${serviceLink}/thumbnail.jpg`,
       link: {
         mobileWebUrl: "http://parentsday.cf",
