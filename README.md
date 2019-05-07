@@ -9,6 +9,8 @@ Page that share carnation to our thankful parents. 🙏
 ## Prerequisites
 
 - Node.js >= 10.x (Recommended the latest version)
+- .env (Refer to [.env.example](.env.example))
+- (Optional)Kakao developers app key refer to https://developers.kakao.com/
 
 ## Install
 
@@ -29,8 +31,12 @@ npm run build
 ```
 
 ```
-npm run serve
+npm run prod
 ```
+
+## Reference
+
+- https://developers.kakao.com/
 
 ## License
 
