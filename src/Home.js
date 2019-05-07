@@ -16,6 +16,7 @@ function Home(props) {
     message: ""
   });
   const parentNameEl = useRef(null);
+  const myNameEl = useRef(null);
 
   useEffect(() => {
     parentNameEl.current.focus();
@@ -28,11 +29,17 @@ function Home(props) {
   const handleSubmit = event => {
     event.preventDefault();
 
-    if (state.parentName.trim() === "") {
+    let { parentName, myName } = state;
+    parentName = parentName.trim();
+    myName = myName.trim();
+
+    if (parentName === "") {
       alert("부모님 성함을 입력하세요.");
+      parentNameEl.current.focus();
       return;
-    } else if (state.myName.trim() === "") {
+    } else if (myName === "") {
       alert("내 이름을 입력하세요.");
+      myNameEl.current.focus();
       return;
     }
     // if (state.message.trim() === "") {
@@ -57,6 +64,7 @@ function Home(props) {
         onChange={handleChange("parentName")}
       />
       <Input
+        ref={myNameEl}
         type="text"
         placeholder="내 이름"
         value={state.myName}
