@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import {
   CardForm,
@@ -8,7 +8,7 @@ import {
   Input,
   StyledSpan
 } from "./components";
-import { init, sendLink } from "./lib/kakao";
+import { sendLink } from "./lib/kakao";
 import CopyIcon from "./img/icons8-copy-link-48.png";
 
 const randomNumber = (min, max) =>
@@ -50,10 +50,6 @@ const Carnation = props => {
     message = "부모님 은혜에 감사합니다."
   } = props.match.params;
   const shareEl = useRef(null);
-
-  useEffect(() => {
-    init(process.env.REACT_APP_KAKAO_JAVASCRIPT_KEY);
-  }, []);
 
   const handleShare = () => {
     shareEl.current.select();
