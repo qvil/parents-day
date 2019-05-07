@@ -1,9 +1,10 @@
 {
   "name": "parents-day",
-  "homepage": "./",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "dotenv": "^8.0.0",
+    "express": "^4.16.4",
     "gh-pages": "^2.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -18,7 +19,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serve": "npx serve -d build -p 80"
+    "serve": "npx serve -d build -p 80",
+    "server": "nodemon server.js",
+    "prod": "node server.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -34,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
   }
 }
