@@ -74,7 +74,7 @@ const Carnation = props => {
         alt="carnation"
       />
       <Title>{message}</Title>
-      <FromTo>{`부모님(${parent})께 자식(${child}) 드림`}</FromTo>
+      <FromTo>{`${parent}에게 ${child} 드림`}</FromTo>
 
       <ShareDiv>
         <StyledSpan>공유하기</StyledSpan>
